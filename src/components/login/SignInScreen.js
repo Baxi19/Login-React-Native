@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, Button, TouchableOpacity, Dimensions, Platform} from 'react-native';
+import {View, Text, StyleSheet, Button, TouchableOpacity, Dimensions, TextInput, Platform} from 'react-native';
 
 import LinearGradient from 'react-native-linear-gradient';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -11,16 +11,120 @@ import * as Constants from 'Agromonte/src/res/constants';
 
 //SignIn Screen
 const SignInScreen = ({navigation}) => {
-    return (
-      <View style={styles.container}>
-        <View style={styles.header}>
-          <Text>Header</Text>
-        </View>  
-        <View style={styles.footer}>
-          <Text>Footer</Text>
-        </View>  
-      </View>
-    );
+  
+  const [data, setData] = React.useState({
+    email: '',
+    password: '',
+    check_textInputChange: false,
+    secureTextEntry: true
+  });   
+  
+  //TODO: check limite
+  const textInputChange = (val) => {
+    if(val.trim().length >= 4){
+      setData({
+        ...data,
+        email: val,
+        check_textInputChange: true
+      });
+    }else{
+      setData({
+        ...data,
+        email: val,
+        check_textInputChange: false
+      });
+    }
+  }
+
+  const handlePasswordChange = (val) => {
+    setData({
+      ...data,
+      password: val
+    });
+  }
+
+  const updateSecureTextEntry = () => {
+    setData({
+      ...data,
+      secureTextEntry: !data.secureTextEntry
+    });
+  }
+
+  return (
+    <View style={styles.container}>
+      
+      <View style={styles.header}>
+        <Text style={styles.text_header}>{Constants.SignInTitle}</Text>
+      </View>  
+      
+      <View style={styles.footer}>
+        
+        <Text style={styles.text_footer}>{Constants.SignInEmail}</Text>
+        <View style={styles.action}>
+          <FontAwesome
+            name="user-o"
+            color={Colors.teal_blue}
+            size={20}
+          />
+          <TextInput 
+            placeholder={Constants.SignInEmailPlaceholder}
+            style={styles.textInput}
+            autoCapitalize="none"
+            onChangeText={(val) => textInputChange(val)}
+          />
+          
+          {data.check_textInputChange ? 
+          <Animatable.View
+            animation="bounceIn"
+          >
+            <Feather
+              name="check-circle"
+              color={Colors.green}
+              size={20}
+            />
+          </Animatable.View>
+          
+          : null }
+        
+        </View>
+        
+        <Text style={[styles.text_footer, {marginTop:35}]}>{Constants.SignInPassword}</Text>
+        <View style={styles.action}>
+          <Feather
+            name="lock"
+            color={Colors.teal_blue}
+            size={20}
+          />
+          <TextInput 
+            placeholder={Constants.SignInPasswordPlaceholder}
+            secureTextEntry={data.secureTextEntry ? true : false }
+            style={styles.textInput}
+            autoCapitalize="none"
+            onChangeText={(val) => handlePasswordChange(val)}
+          />
+          <TouchableOpacity
+            onPress={updateSecureTextEntry}
+          >
+            {data.secureTextEntry ? 
+            <Feather
+              name="eye-off"
+              color={Colors.grey}
+              size={20}
+            />
+            :
+            <Feather
+              name="eye"
+              color={Colors.grey}
+              size={20}
+            />
+            }
+          </TouchableOpacity>
+          
+        </View>
+
+      </View>  
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({

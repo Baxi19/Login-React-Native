@@ -15,28 +15,20 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from 'Agromonte/src/components/driver/home/HomeScreen';
 import TravelScreen from 'Agromonte/src/components/driver/travel/TravelScreen';
 import SplashScreen from 'Agromonte/src/components/login/SplashScreen';
+import SignInScreen from 'Agromonte/src/components/login/SignInScreen';
 import Colors from 'Agromonte/src/res/colors';
 
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
 
-
-//App
 
 const Stack = createStackNavigator();
 
+//App
 const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{
         headerStyle: {
-          backgroundColor: Colors.mint
+          backgroundColor: Colors.teal
         },
         headerTintColor: Colors.white,
         headerTitleStyle: {
@@ -44,6 +36,7 @@ const App = () => {
         }
       }}>
         <Stack.Screen name="Agromonte" component={SplashScreen} />
+        <Stack.Screen name="Registrarse" component={SignInScreen}/>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Travel" component={TravelScreen}/>
       </Stack.Navigator>

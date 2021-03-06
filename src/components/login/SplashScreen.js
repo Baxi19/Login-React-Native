@@ -4,14 +4,14 @@ import {
     Text, 
     Dimensions,
     StyleSheet,
-    Image,
-    Button,
     TouchableOpacity
 } from 'react-native';
 
 import LinearGradient from 'react-native-linear-gradient';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import * as Animatable from 'react-native-animatable';
+import Colors from 'Agromonte/src/res/colors';
+import * as Constants from 'Agromonte/src/res/constants';
 
 const SplashScreen = ({navigation}) => {
     return (
@@ -25,30 +25,27 @@ const SplashScreen = ({navigation}) => {
                 resizeMode="stretch"
             />
         </View>
-        <View style={styles.footer}>
-            <Text style={styles.title}>Stay connected with everyone!</Text>  
-            <Text style={styles.text}>Sign in with account</Text>  
+        <Animatable.View style={styles.footer}
+            animation="fadeInUpBig"
+        >
+            <Text style={styles.title}>{Constants.SplashTitle}</Text>  
+            <Text style={styles.text}>{Constants.SplashDescription}</Text>  
             <View style={styles.button}>
-                <TouchableOpacity onPress={() => alert('Click')}>
+                <TouchableOpacity onPress={() => navigation.navigate("Registrarse")}>
                     <LinearGradient
-                        colors={['#08d4c4', '#01ab9d']}
+                        colors={[Colors.robin_egg_blue, Colors.persian_green]}
                         style={styles.signIn}
                     >
-                        <Text style={styles.textSign}>Get Started</Text>
+                        <Text style={styles.textSign}>{Constants.SplashButton}</Text>
                         <MaterialIcons 
                             name="navigate-next"
-                            color="#fff"
+                            color={Colors.white}
                             size={20}
                         />
                     </LinearGradient>
                 </TouchableOpacity>
             </View>
-            
-            {/*<Button
-                title="Sign In"
-                onPress={() => navigation.navigate("Home")}
-            />*/}
-        </View>
+        </Animatable.View>
       </View>
     );
 };
@@ -61,7 +58,7 @@ const height_logo = height * 0.28;
 const styles = StyleSheet.create({
   container: {
     flex: 1, 
-    backgroundColor: '#009387'
+    backgroundColor: Colors.teal
   },
   header: {
       flex: 2,
@@ -70,7 +67,7 @@ const styles = StyleSheet.create({
   },
   footer: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: Colors.white,
       borderTopLeftRadius: 30,
       borderTopRightRadius: 30,
       paddingVertical: 50,
@@ -81,12 +78,12 @@ const styles = StyleSheet.create({
       height: height_logo
   },
   title: {
-      color: '#05375a',
+      color: Colors.teal_blue,
       fontSize: 30,
       fontWeight: 'bold'
   },
   text: {
-      color: 'grey',
+      color: Colors.grey,
       marginTop:5
   },
   button: {
@@ -102,7 +99,7 @@ const styles = StyleSheet.create({
       flexDirection: 'row'
   },
   textSign: {
-      color: 'white',
+      color: Colors.white,
       fontWeight: 'bold'
   }
 });

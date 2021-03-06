@@ -25,10 +25,22 @@ const SplashScreen = ({navigation}) => {
         <View style={styles.footer}>
             <Text style={styles.title}>Stay connected with everyone!</Text>  
             <Text style={styles.text}>Sign in with account</Text>  
-            <Button
+            <View style={styles.button}>
+                <TouchableOpacity onPress={() => alert('Click')}>
+                    <LinearGradient
+                        colors={['#08d4c4', '#01ab9d']}
+                        style={styles.signIn}
+                    >
+                        <Text style={styles.textSign}>Get Started</Text>
+                        
+                    </LinearGradient>
+                </TouchableOpacity>
+            </View>
+            
+            {/*<Button
                 title="Sign In"
                 onPress={() => navigation.navigate("Home")}
-            />
+            />*/}
         </View>
       </View>
     );

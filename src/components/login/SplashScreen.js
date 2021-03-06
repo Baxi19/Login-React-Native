@@ -11,12 +11,15 @@ import {
 
 import LinearGradient from 'react-native-linear-gradient';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import * as Animatable from 'react-native-animatable';
 
 const SplashScreen = ({navigation}) => {
     return (
       <View style={styles.container}>
         <View style={styles.header}>
-            <Image 
+            <Animatable.Image 
+                animation="bounceIn"
+                duraton="1500"
                 source={require('../../assets/logo.png')}
                 style={styles.logo}
                 resizeMode="stretch"

@@ -5,8 +5,12 @@ import {
     Dimensions,
     StyleSheet,
     Image,
-    Button
+    Button,
+    TouchableOpacity
 } from 'react-native';
+
+import LinearGradient from 'react-native-linear-gradient';
+
 
 const SplashScreen = ({navigation}) => {
     return (

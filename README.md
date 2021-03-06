@@ -2,6 +2,12 @@
 
 **Proyecto de Ingeniería de Software**
 
+### Version de React Native
+```
+npm react-native -v
+```
+output: **6.14.11**
+
 ### Create App
 
 ```
@@ -38,4 +44,8 @@ npm install @react-navigation/stack
 npm install @react-navigation/drawer
 ```
 
+### Installing react-native-linear-gradient
 
+~~~
+npm install react-native-linear-gradient --save
+~~~

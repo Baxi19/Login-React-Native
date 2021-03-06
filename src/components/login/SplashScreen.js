@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 
 import LinearGradient from 'react-native-linear-gradient';
-
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 const SplashScreen = ({navigation}) => {
     return (
@@ -32,7 +32,11 @@ const SplashScreen = ({navigation}) => {
                         style={styles.signIn}
                     >
                         <Text style={styles.textSign}>Get Started</Text>
-                        
+                        <MaterialIcons 
+                            name="navigate-next"
+                            color="#fff"
+                            size={20}
+                        />
                     </LinearGradient>
                 </TouchableOpacity>
             </View>

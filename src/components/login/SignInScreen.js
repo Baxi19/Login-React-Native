@@ -126,7 +126,8 @@ const SignInScreen = ({navigation}) => {
         <View style={[styles.Button, {marginTop:35}]}>
           <TouchableOpacity
             style={styles.signIn}
-            onPress={() => navigation.navigate("Home")}
+            //onPress={() => navigation.navigate("Home")}
+            
           >
             <LinearGradient
               colors={[Colors.robin_egg_blue, Colors.persian_green]}
@@ -135,6 +136,19 @@ const SignInScreen = ({navigation}) => {
               <Text style={styles.textSign}>{Constants.SignInButton}</Text>
             </LinearGradient>
           </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => navigation.goBack()}
+            style={[styles.signIn, {
+                borderColor: Colors.teal,
+                borderWidth: 1,
+                marginTop: 15
+            }]}
+          >
+            <Text style={[styles.textSign, {color: Colors.teal}]}>Regresar</Text>
+          </TouchableOpacity>
+
+
         </View>
 
       </Animatable.View>  

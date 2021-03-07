@@ -46,6 +46,7 @@ const SplashScreen = ({navigation}) => {
                         />
                     </LinearGradient>
                 </TouchableOpacity>
+
             </View>
         </Animatable.View>
       </View>

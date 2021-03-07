@@ -11,3 +11,4 @@ export const SignInEmail = 'Correo Electrónico';
 export const SignInPassword = 'Contraseña';
 export const SignInEmailPlaceholder = 'Ingrese el correo electrónico';
 export const SignInPasswordPlaceholder = 'Ingrese su contraseña';
+export const SignInButton = 'Iniciar sesión';

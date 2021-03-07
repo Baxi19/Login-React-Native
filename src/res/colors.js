@@ -5,8 +5,7 @@ const Colors = {
     persian_green: '#01ab9d',
     teal_blue: '#05375a', 
     grey: 'grey',
-    green: 'green'
-
+    green: 'green',
 };
 
 export default Colors;

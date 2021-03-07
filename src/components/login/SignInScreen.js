@@ -21,7 +21,7 @@ const SignInScreen = ({navigation}) => {
   
   //TODO: check limite
   const textInputChange = (val) => {
-    if(val.trim().length >= 4){
+    if(val.trim().length >= 11){
       setData({
         ...data,
         email: val,
@@ -57,9 +57,11 @@ const SignInScreen = ({navigation}) => {
         <Text style={styles.text_header}>{Constants.SignInTitle}</Text>
       </View>  
       
-      <View style={styles.footer}>
+      <Animatable.View style={styles.footer}
+        animation="fadeInUpBig"
+      >
         
-        <Text style={styles.text_footer}>{Constants.SignInEmail}</Text>
+        <Text style={[styles.text_footer, {marginTop:15}]}>{Constants.SignInEmail}</Text>
         <View style={styles.action}>
           <FontAwesome
             name="user-o"
@@ -74,17 +76,17 @@ const SignInScreen = ({navigation}) => {
           />
           
           {data.check_textInputChange ? 
-          <Animatable.View
-            animation="bounceIn"
-          >
-            <Feather
-              name="check-circle"
-              color={Colors.green}
-              size={20}
-            />
-          </Animatable.View>
-          
-          : null }
+            <Animatable.View
+              animation="bounceIn"
+            >
+              <Feather
+                name="check-circle"
+                color={Colors.green}
+                size={20}
+              />
+            </Animatable.View>
+            : null 
+          }
         
         </View>
         
@@ -106,23 +108,36 @@ const SignInScreen = ({navigation}) => {
             onPress={updateSecureTextEntry}
           >
             {data.secureTextEntry ? 
-            <Feather
-              name="eye-off"
-              color={Colors.grey}
-              size={20}
-            />
-            :
-            <Feather
-              name="eye"
-              color={Colors.grey}
-              size={20}
-            />
+              <Feather
+                name="eye-off"
+                color={Colors.grey}
+                size={20}
+              />
+              :
+              <Feather
+                name="eye"
+                color={Colors.grey}
+                size={20}
+              />
             }
           </TouchableOpacity>
-          
         </View>
 
-      </View>  
+        <View style={[styles.Button, {marginTop:35}]}>
+          <TouchableOpacity
+            style={styles.signIn}
+            onPress={() => navigation.navigate("Home")}
+          >
+            <LinearGradient
+              colors={[Colors.robin_egg_blue, Colors.persian_green]}
+              style={styles.signIn}
+            >
+              <Text style={styles.textSign}>{Constants.SignInButton}</Text>
+            </LinearGradient>
+          </TouchableOpacity>
+        </View>
+
+      </Animatable.View>  
     </View>
   );
 };
@@ -130,7 +145,7 @@ const SignInScreen = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1, 
-    backgroundColor: '#009387'
+    backgroundColor: Colors.teal
   },
   header: {
       flex: 1,
@@ -140,14 +155,14 @@ const styles = StyleSheet.create({
   },
   footer: {
       flex: 3,
-      backgroundColor: '#fff',
+      backgroundColor: Colors.white,
       borderTopLeftRadius: 30,
       borderTopRightRadius: 30,
       paddingHorizontal: 20,
       paddingVertical: 30
   },
   text_header: {
-      color: '#fff',
+      color: Colors.white,
       fontWeight: 'bold',
       fontSize: 30
   },
@@ -192,7 +207,8 @@ const styles = StyleSheet.create({
   },
   textSign: {
       fontSize: 18,
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      color: Colors.white
   }
 });
 

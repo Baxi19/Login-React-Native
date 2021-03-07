@@ -34,8 +34,10 @@ const App = () => {
         headerTitleStyle: {
           fontWeight: 'bold'
         }
-      }}>
-        <Stack.Screen name="Agromonte" component={SplashScreen} />
+      }}
+      //headerMode='none'
+      >
+        <Stack.Screen name="Agromonte" component={SplashScreen} headerMode='none'/>
         <Stack.Screen name="Registrarse" component={SignInScreen}/>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Travel" component={TravelScreen}/>

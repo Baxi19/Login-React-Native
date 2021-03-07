@@ -4,7 +4,8 @@ import {
     Text, 
     Dimensions,
     StyleSheet,
-    TouchableOpacity
+    TouchableOpacity,
+    StatusBar
 } from 'react-native';
 
 import LinearGradient from 'react-native-linear-gradient';
@@ -16,6 +17,7 @@ import * as Constants from 'Agromonte/src/res/constants';
 const SplashScreen = ({navigation}) => {
     return (
       <View style={styles.container}>
+        <StatusBar backgroundColor={Colors.teal} barStyle="light-content"/>
         <View style={styles.header}>
             <Animatable.Image 
                 animation="bounceIn"

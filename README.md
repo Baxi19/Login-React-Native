@@ -1,6 +1,18 @@
 # :palm_tree: :palm_tree:
 
-**Login Example**
+# <div align="center">Login React Native :octocat:</div>
+### <div align="center">Examples of app :fire: !!</div>
+
+<div class="row" align="center">
+  <img src="./documentation/video1.gif" width="200" height="400" />
+  <img src="./documentation/video2.gif" width="200" height="400" />
+</div>
+
+### <div align="center"> Show some ❤️ by starring some of the repositories! </div>
+
+
+
+## Dependencies
 
 ### Version de React Native
 
@@ -10,11 +22,6 @@ npm react-native -v
 
 output: **6.14.11**
 
-### Create App
-
-```
-npx react-native init Nombre_App
-```
 
 ### Installation of React Navigation
 
@@ -69,3 +76,4 @@ npx react-native link react-native-vector-icons
 ```
 npm install react-native-animatable --save
 ```
+

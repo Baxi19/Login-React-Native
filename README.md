@@ -10,7 +10,7 @@
 
 ### <div align="center"> Show some ❤️ by starring some of the repositories! </div>
 
-[![Build Status](https://travis-ci.org/ali-irawan/xtra.svg?branch=master)](https://travis-ci.org/ali-irawan/xtra)
+[![Build Status](https://github.com/Baxi19/Login-React-Native/xtra.svg?branch=master)](https://github.com/Baxi19/Login-React-Native/xtra)
 [![Download](https://poser.pugx.org/ali-irawan/xtra/d/total.svg)](https://poser.pugx.org/ali-irawan/xtra/d/total.svg)
 [![Stable](https://poser.pugx.org/ali-irawan/xtra/v/stable.svg)](https://poser.pugx.org/ali-irawan/xtra/v/stable.svg)
 [![Unstable](https://poser.pugx.org/ali-irawan/xtra/v/unstable.svg)](https://poser.pugx.org/ali-irawan/xtra/v/unstable.svg)

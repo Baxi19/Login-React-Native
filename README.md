@@ -1,6 +1,6 @@
 # :palm_tree: :palm_tree:
 
-**Proyecto de Ingeniería de Software**
+**Login Example**
 
 ### Version de React Native
 

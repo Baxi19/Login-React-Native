@@ -1,4 +1,4 @@
-# Agromonte :palm_tree: :palm_tree:
+# :palm_tree: :palm_tree:
 
 **Proyecto de Ingeniería de Software**
 
@@ -13,7 +13,7 @@ output: **6.14.11**
 ### Create App
 
 ```
-npx react-native init Agromonte
+npx react-native init Nombre_App
 ```
 
 ### Installation of React Navigation
